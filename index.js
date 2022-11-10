@@ -6,30 +6,17 @@ app.use(cors());
 app.use(express.json());
 
 const db = mysql.createConnection({
-    user:'ontology_lichen',
-    host:'cs85.hostneverdie.com',
-    password:'rh3J0o4i5',
-    database:'ontology_lichen',
+    user:'sql6558438',
+    host:'sql6.freesqldatabase.com',
+    password:'GMRWtG98Bi',
+    database:'sql6558438',
     port:'3306'
 })
-
-db.connect(function(err) {
-  if (err) throw err;
-  console.log("Connected!");
-});
-
-app.get('/lichen',(req,res)=>{
-  db.query("SELECT li_id FROM lichen",(err,result)=>{
-      if(err){
-          console.log(err);
-      }
-      else{
-          res.send(result);
-      }
-  })
+app.get('/',(req,res)=>{
+  res.send("API IS RUNNING!!!")
 })
 
-/*app.get('/employees',(req,res)=>{
+app.get('/employees',(req,res)=>{
     db.query("SELECT * FROM employees",(err,result)=>{
         if(err){
             console.log(err);
@@ -84,7 +71,7 @@ app.post("/create", (req, res) => {
         res.send(result);
       }
     });
-  });*/
+  });
   
 
 app.listen('3001 ',()=>{
